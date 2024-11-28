@@ -6,7 +6,7 @@ Shows warning if the primary DRBD host becomes secondary or the secondary goes o
 The “/proc/drbd” file in the Linux system is read for this purpose.  
 
 Tested with:  
-* Zabbix Server 6
+* Zabbix Server 6 & Zabbix Server 7
 * zabbix-agent2 / drbd (on Debian 12 server)
 
 ## Getting Started
