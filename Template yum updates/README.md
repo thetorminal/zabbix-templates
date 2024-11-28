@@ -15,14 +15,16 @@ Tested with:
 
 ### Installing
 #### On Zabbix frontend server:  
-* Download and import the template `drbd-status.yaml`  
-* Assign the `Template DRBD Status'` to the docker host(s) you want to monitor  
+* Download and import the template `template-yum-updates.yaml`  
+* Assign the `Template YUM Updates` to the docker host(s) you want to monitor  
 
 #### On all hosts you want to monitor:
 * Install and configure package zabbix-agent2 (if not installed):  
      ```sh
      apt-get install zabbix-agent2`  
-* add file "yum.conf" to /etc/zabbix/zabbix_agent2.d/  
+* add file "yum.conf" to /etc/zabbix/zabbix_agent2.d/
+     ```sh
+     curl -L https://raw.githubusercontent.com/emodii/zabbix-templates/refs/heads/main/Template%20yum%20updates/yum.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf```  
 * restart zabbix-agent2
      ```sh
      systemctl restart zabbix-agent2`
