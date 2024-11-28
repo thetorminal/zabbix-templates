@@ -1,7 +1,7 @@
 ---
 
 - name: check docker images for update for zabbix 
-  hosts: debian12
+  hosts: all
   tasks:
     - name: Get DEB architecture
       shell: dpkg --print-architecture
