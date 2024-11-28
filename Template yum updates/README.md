@@ -1,9 +1,9 @@
-# 📌 Zabbix yum monitoring
+# Zabbix CentOS/Redhat yum updates monitoring
 Monitoring of available CentOS/Redhat updates via ´yum update-check´ with Zabbix.  
 
 ## Description
 Shows number of available yum updates on host as a warning.
-DNF package manager update template also available: 
+DNF package manager update template also available: [Template dnf updates](https://github.com/emodii/zabbix-templates/edit/main/Template%20dnf%20updates)
 Tested with:  
 * Zabbix Server 7
 * zabbix-agent2 (on CentOS server)
