@@ -1,4 +1,4 @@
-# 📌  Zabbix docker image update monitoring
+# Zabbix docker image update monitoring
 Monitoring of docker image updates with Zabbix.  
 
 ## Description
@@ -26,21 +26,28 @@ Tested with:
 Manual:  
 * Install and configure package zabbix-agent2 (if not installed):  
      ```sh
-     apt-get install zabbix-agent2`  
+     apt-get install zabbix-agent2  
 * download "dockcheck.sh" from dockcheck repository to new directory `/etc/zabbix/scripts/` and change permission:  
      ```sh
-     mdkir /etc/zabbix/scripts
+     mkdir /etc/zabbix/scripts
      curl -L https://raw.githubusercontent.com/mag37/dockcheck/main/dockcheck.sh -o /etc/zabbix/scripts/dockcheck.sh
-     chown zabbix:zabbix /etc/zabbix/scripts/dockcheck.sh && chmod 0755 /etc/zabbix/scripts/dockcheck.sh```  
+     chown zabbix:zabbix /etc/zabbix/scripts/dockcheck.sh && chmod 0755 /etc/zabbix/scripts/dockcheck.sh
+     ```
 * run "dockcheck.sh" to install regctl:  
      ```sh
      bash /etc/zabbix/scripts/dockcheck.sh -n
      # Confirm with "y":   
      Required dependency 'regctl' missing, do you want it downloaded? y/[n] y  
-     chown zabbix:zabbix dockcheck.sh && chmod 0755 /etc/zabbix/scripts/regctl```  
+     chown zabbix:zabbix dockcheck.sh && chmod 0755 /etc/zabbix/scripts/regctl
+     ```
 * add "dockcheck.conf" to /etc/zabbix/zabbix_agent2.d/:  
      ```sh
-     curl -L https://raw.githubusercontent.com/emodii/zabbix-docker-image-updates/refs/heads/main/dockcheck.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf```  
+     curl -L https://raw.githubusercontent.com/emodii/zabbix-docker-image-updates/refs/heads/main/dockcheck.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf
+     ```
+* restart zabbix-agent2
+     ```sh
+     systemctl restart zabbix-agent2
+     ```
 
 via Ansible playbook:  
 * run the playbook `zabbix-dockcheck.yml` on host(s) you want to monitor docker on.  
