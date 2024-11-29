@@ -1,0 +1,30 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 7df96b18c230490a9a0a9e2307226338
+      name: Templates
+  templates:
+    - uuid: fd3e1ea341f74aebba887e398ea9a6c5
+      template: 'Template DNF Updates'
+      name: 'Template DNF Updates'
+      description: |
+        Monitoring of Updates from dnf (CentOS/Redhat)
+        ---        
+        https://github.com/emodii/zabbix-templates/tree/main/Template%20dnf%20updates
+      groups:
+        - name: Templates
+      items:
+        - uuid: f77df451a4894fe5afd1e5eeeee48687
+          name: Updates
+          key: dnf.update
+          delay: '900'
+          history: 90d
+          tags:
+            - tag: Application
+              value: DNF
+          triggers:
+            - uuid: eaadb2685a324123b3997551405edc28
+              expression: 'last(/Template DNF Updates/dnf.update)>0'
+              name: '{ITEM.LASTVALUE1} updates on {HOST.NAME}'
+              priority: WARNING
+              manual_close: 'YES'
