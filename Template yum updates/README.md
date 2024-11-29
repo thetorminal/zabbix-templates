@@ -25,7 +25,7 @@ Tested with:
      ```
 * add file "yum.conf" to /etc/zabbix/zabbix_agent2.d/
      ```sh
-     curl -L https://raw.githubusercontent.com/emodii/zabbix-templates/refs/heads/main/Template%20yum%20updates/yum.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf
+     curl -L https://raw.githubusercontent.com/emodii/zabbix-templates/refs/heads/main/Template%20yum%20updates/yum.conf -o /etc/zabbix/zabbix_agent2.d/yum.conf
      ```  
 * restart zabbix-agent2
      ```sh
