@@ -4,12 +4,15 @@ Monitoring of docker image updates with Zabbix.
 ## Description
 Based on “dockcheck” (CLI query to check updates): [Github - dockcheck](https://github.com/mag37/dockcheck/tree/main)  
 
-Shows number of available docker image updates on host (Example: "2 Docker Image updates on host-xyz")  
+Shows number of available docker image updates on host (Example: "2 Docker Image updates on host-xyz") 
+![docker_image_zabbix](https://github.com/user-attachments/assets/be2d897b-7fc6-40dc-ac12-19c833a6f0ef)
+
 Tested with:  
 * Zabbix Server 7.0.5
 * zabbix-agent2 (on Debian 12 server)
 
 ## Getting Started
+
 ### Dependencies
 * [dockcheck.sh](https://github.com/mag37/dockcheck/blob/main/dockcheck.sh)
 * [regclient/regctl](https://github.com/regclient/regclient) (Licensed under Apache-2.0 License)
