@@ -4,8 +4,10 @@ Monitoring of docker image updates with Zabbix.
 ## Description
 Based on “dockcheck” (CLI query to check updates): [Github - dockcheck](https://github.com/mag37/dockcheck/tree/main)  
 
-Shows number of available docker image updates on host (Example: "2 Docker Image updates on host-xyz") 
-Important: The Docker image version must be specified with :latest (e.g. in a docker-compose file). A fixed version number such as mariadb:10.6 does not work.
+Shows number of available docker image updates on host (Example: "2 Docker Image updates on host-xyz").  
+Important: The Docker image version must be specified with :latest (e.g. in a docker-compose file), a fixed version number such as mariadb:10.6 does not work.  
+
+Example notification:  
 ![docker_image_zabbix](https://github.com/user-attachments/assets/be2d897b-7fc6-40dc-ac12-19c833a6f0ef)
 
 Tested with:  
