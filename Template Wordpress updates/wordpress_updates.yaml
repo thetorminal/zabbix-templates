@@ -1,0 +1,62 @@
+zabbix_export:
+  version: '7.2'
+  template_groups:
+    - uuid: 7df96b18c230490a9a0a9e2307226338
+      name: Templates
+  templates:
+    - uuid: 968da497d3a248759265c2c77e7cfbd1
+      template: 'Template Wordpress Updates'
+      name: 'Template Wordpress Updates'
+      description: |
+        Checks available Updates for Plugins, Themes and Wordpress Core.
+        ---
+        https://github.com/emodii/zabbix-templates/tree/main/Template%20Wordpress%20updates
+      groups:
+        - name: Templates
+      discovery_rules:
+        - uuid: 4a05914916dc41c1aa88b0ccbb2d106c
+          name: 'Discover WordPress installations'
+          key: wp.discovery
+          delay: 1h
+          item_prototypes:
+            - uuid: cd474b085cdb4f4c8530db4aab305c74
+              name: 'WordPress Core Updates on {#WP_PATH}'
+              key: 'wp.core.updates[{#WP_PATH}]'
+              delay: 1h
+              tags:
+                - tag: Application
+                  value: Wordpress
+              trigger_prototypes:
+                - uuid: 4b8c1f8cf6994ff7a498ab7fa8920d51
+                  expression: 'last(/Template Wordpress Updates/wp.core.updates[{#WP_PATH}])>0'
+                  recovery_mode: RECOVERY_EXPRESSION
+                  recovery_expression: 'last(/Template Wordpress Updates/wp.core.updates[{#WP_PATH}])=0'
+                  name: '{#WP_PATH}: {ITEM.LASTVALUE} Wordpress Core Update'
+                  priority: AVERAGE
+            - uuid: 5a43acaae35f4254b5f7aeb7fa2973cc
+              name: 'WordPress Plugin Updates on {#WP_PATH}'
+              key: 'wp.plugin.updates[{#WP_PATH}]'
+              delay: 1h
+              tags:
+                - tag: Application
+                  value: Wordpress
+            - uuid: 9460300d20df403385e0c321c55ed493
+              name: 'WordPress Theme Updates on {#WP_PATH}'
+              key: 'wp.theme.updates[{#WP_PATH}]'
+              delay: 1h
+              tags:
+                - tag: Application
+                  value: Wordpress
+          trigger_prototypes:
+            - uuid: 8a0d4da5b294437fa8cc0c18a047b6b3
+              expression: 'last(/Template Wordpress Updates/wp.plugin.updates[{#WP_PATH}])>0 and last(/Template Wordpress Updates/wp.theme.updates[{#WP_PATH}])>0'
+              name: 'WP Updates {#WP_PATH}: {ITEM.LASTVALUE1} Plugins, {ITEM.LASTVALUE2} Themes'
+              priority: WARNING
+            - uuid: 20f71b67c3e1464b83d6de21142b16cd
+              expression: 'last(/Template Wordpress Updates/wp.plugin.updates[{#WP_PATH}])>0 and last(/Template Wordpress Updates/wp.theme.updates[{#WP_PATH}])=0'
+              name: 'WP Updates {#WP_PATH}: {ITEM.LASTVALUE} Plugins'
+              priority: INFO
+            - uuid: 093ceb80b4894e4baab176041d836043
+              expression: 'last(/Template Wordpress Updates/wp.theme.updates[{#WP_PATH}])>0 and last(/Template Wordpress Updates/wp.plugin.updates[{#WP_PATH}])=0'
+              name: 'WP Updates {#WP_PATH}: {ITEM.LASTVALUE} Themes'
+              priority: INFO
