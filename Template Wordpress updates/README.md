@@ -32,16 +32,17 @@ Tested with:
 Manual:  
 * Install and configure package zabbix-agent2 (if not installed):  
      ```sh
-     apt-get install zabbix-agent2  
+     apt-get install zabbix-agent2
+     ```
 * download "wp_discovery.sh" to new directory `/etc/zabbix/scripts/` and change permission:  
      ```sh
      mkdir /etc/zabbix/scripts
-     curl -L wp_discovery.sh
+     curl -L https://raw.githubusercontent.com/emodii/zabbix-templates/refs/heads/main/Template%20Wordpress%20updates/wp_discovery.sh -o /etc/zabbix/scripts/wp_discovery.sh
      chown zabbix:zabbix /etc/zabbix/scripts/wp_discovery.sh && chmod 0755 /etc/zabbix/scripts/wp_discovery.sh
      ```
 * add "wp_updates.conf" to /etc/zabbix/zabbix_agent2.d/:  
      ```sh
-     curl -L wp_updates.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf
+     curl -L https://raw.githubusercontent.com/emodii/zabbix-templates/refs/heads/main/Template%20Wordpress%20updates/wp_updates.conf -o /etc/zabbix/zabbix_agent2.d/wp_updates.conf
      ```
 * restart zabbix-agent2
      ```sh
