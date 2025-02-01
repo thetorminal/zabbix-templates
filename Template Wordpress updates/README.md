@@ -18,7 +18,7 @@ Tested with:
 ## Getting Started
 
 ### Dependencies
-* [Github - WP-CLI](https://github.com/wp-cli/wp-cli)  
+* [Github - WP-CLI](https://github.com/wp-cli/wp-cli) installed on the host ([Installation Guide](https://github.com/wp-cli/wp-cli?tab=readme-ov-file#installing))   
 * Zabbix-Server with timeouts set up to 15 seconds! (Timeout=15)
 * Host with zabbix-agent2 and a Wordpress installation
 
@@ -33,6 +33,18 @@ Manual:
 * Install and configure package zabbix-agent2 (if not installed):  
      ```sh
      apt-get install zabbix-agent2
+     ```
+* Install WP-CLI:
+     ([Installation Guide from WP_CLI](https://github.com/wp-cli/wp-cli?tab=readme-ov-file#installing)):
+     ```sh
+     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+     php wp-cli.phar --info
+     chmod +x wp-cli.phar
+     sudo mv wp-cli.phar /usr/local/bin/wp
+     ```
+     Test, if it was successfull:
+     ```sh
+     wp --info
      ```
 * download "wp_discovery.sh" to new directory `/etc/zabbix/scripts/` and change permission:  
      ```sh
