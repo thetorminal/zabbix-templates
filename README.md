@@ -6,6 +6,7 @@ Contains templates for zabbix with requirements, instructions and needed scripts
 2. [Template Docker image updates](https://github.com/emodii/zabbix-templates/tree/main/Template%20Docker%20image%20updates)
 3. [Template yum updates](https://github.com/emodii/zabbix-templates/tree/main/Template%20yum%20updates)
 4. [Template dnf updates](https://github.com/emodii/zabbix-templates/tree/main/Template%20dnf%20updates)
+5. [Template Wordpress updates](https://github.com/emodii/zabbix-templates/tree/main/Template%20Wordpress%20updates)
 
 Each directory contains a `README.md` file with instructions for the usage of the template.  
 
