@@ -1,11 +1,11 @@
 # Zabbix Wordpress updates monitoring
-Monitoring of Wordpress updates (Core, Plugins and Themens) with Zabbix.  
+Monitoring of available Wordpress updates (Core, Plugins and Themens) with Zabbix.  
 
 ## Description
 Based on “WP-CLI” (CLI query to check updates): [Github - WP-CLI](https://github.com/wp-cli/wp-cli)  
 
-Shows number of available Wordpress Core, Plugin and Theme updates on host for all available Wordpress-Installations at "/var/www/*".  
-LLD (low level discovery) is used to scan for all folders at "/var/www/". A discovery rule is used to scan the folders.  
+Shows number of available Wordpress Core, Plugin and Theme updates on a host for all available Wordpress installations at `/var/www/*`.  
+LLD (low level discovery) is used inside of a discovery rule to scan all folders at `/var/www/*`.  
 
 Example notification:  
 ![wordpress_zabbix_updates](https://github.com/user-attachments/assets/1fb881ec-1f15-4495-a323-ebabf11f605b)
@@ -29,6 +29,10 @@ Tested with:
 - Assign the `Template Wordpress Updates` to the Wordpress host(s) you want to monitor  
 
 #### On all hosts you want to monitor:  
+
+Automatically (Bash-Script-Installer):  
+* download and run the file `installer_wp_updates.sh`, which will run all manual steps automatically.
+
 Manual:  
 * Install and configure package zabbix-agent2 (if not installed):  
      ```sh
