@@ -62,5 +62,8 @@ via Ansible playbook:
 * 0.1
     * Initial Release
 
+## To-Do
+* List name of image, which needs an update (using Zabbix LLD)
+
 ## Acknowledgments
 * [Github - dockcheck](https://github.com/mag37/dockcheck/tree/main)
