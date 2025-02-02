@@ -11,7 +11,7 @@ Example notification:
 ![wordpress_zabbix_updates](https://github.com/user-attachments/assets/1fb881ec-1f15-4495-a323-ebabf11f605b)
 
 Tested with:  
-* Zabbix Server 7.2.3
+* Zabbix Server 7.0.8 & 7.2.3
 * zabbix-agent2 (on Debian 12 server)
 * Various Wordpress-Versions
 
