@@ -4,10 +4,11 @@ Contains templates for zabbix with requirements, instructions and needed scripts
 
 ## 📁 Structure
 1. [Template DRBD Status](https://github.com/thetorminal/zabbix-drbd)
-3. [Template Docker image updates](https://github.com/thetorminal/zabbix-docker-image-updates)
-4. [Template yum updates](https://github.com/thetorminal/zabbix-yum-updates)
-5. [Template dnf updates](https://github.com/thetorminal/zabbix-dnf-updates)
-6. [Template Wordpress updates](https://github.com/thetorminal/Zabbix-Wordpress-updates)
+2. [Template Docker image updates](https://github.com/thetorminal/zabbix-docker-image-updates)
+3. [Template yum updates](https://github.com/thetorminal/zabbix-yum-updates)
+4. [Template dnf updates](https://github.com/thetorminal/zabbix-dnf-updates)
+5. [Template Wordpress updates](https://github.com/thetorminal/Zabbix-Wordpress-updates)
+7. [Template Github traffic](https://github.com/thetorminal/zabbix-github-traffic)
 
 Each repository contains a `README.md` file with instructions for the usage of the template.  
 
