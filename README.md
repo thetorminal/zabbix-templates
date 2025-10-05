@@ -1,6 +1,8 @@
 # Templates for Zabbix
 Overview repository for my zabbix templates.  
-Contains templates for zabbix with requirements, instructions and needed scripts.
+Contains templates for zabbix with requirements, instructions and needed scripts.  
+Read more in my blog - [Torminal: Zabbix](https://torminal.com/categories/zabbix/).
+
 
 ## 📁 Structure
 1. [Template DRBD Status](https://github.com/thetorminal/zabbix-drbd)
